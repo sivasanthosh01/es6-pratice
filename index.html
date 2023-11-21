@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6 Pratice</title>
+</head>
+<body>
+    <h1>Es6 Pratice</h1>
+    <button id="btn">click</button>
+<script>
+    // let name="rahul";
+    // let place="Tenkasi"
+
+    // console.log('my name is "rahul" ');
+
+//Template literals (backticks)
+
+    // console.log(`my name is ${name}`);
+
+//String Interpolation
+
+    // console.log(`${name} lives in ${place}
+    // and 
+    // "he is a cricket player"
+    // 'captain of india'
+    // "Thank you."`);
+
+    //function declaration
+   //hoisting
+    // let msg="Hello";
+    // test()//hoisting
+    // function test(){
+    //     let name="santhosh";
+    //     console.log(name);
+    //     console.log(msg);
+    // }
+    // console.log(test);
+    // test()
+
+    //function Expression
+    // total()//Erorr
+    // let total=function(){
+    //     let mark=400;
+    //     console.log(mark);
+    // }
+    // total();
+
+    // let odd=function(n){
+    //     return n%2!=0;
+    // }
+    // console.log(odd(10));
+
+    //default Parameter
+
+    // function greet(name='rahul'){
+    //     console.log(`${name} is the best batsman in the world`);
+    // }
+    // greet("Virat");
+    // greet();
+    // greet("dhoni");
+    // greet()
+
+    //Arrow Function
+
+    // let even=(n)=>{
+    //     return n%2==0;
+    // }
+    // console.log(even(10));
+
+
+//Spread Operator
+
+// let a=[1,2,3,4]
+// let b=[5,6,"Hello",7];
+// let c=[...a,...b,"Rahul"];
+// console.log(c);
+
+// const arr=[10,20,30]
+// const ext=[40,50,60]
+// array=[...ext,...arr];
+// console.log(array);
+
+
+//every
+
+// let a=[2,4,9,8,34];
+// let res=a.every((a)=>{
+// return a%2==0;
+// })
+// console.log(res);
+
+//some
+
+// let a=[2,4,9,8,34];
+// let res=a.some((a)=>{
+// return a%2!=0;
+// })
+// console.log(res);
+
+//deep copy (it copy values)
+
+// let a=10;
+// let b=a;
+// b=20;
+// console.log(a,b);
+
+//Shallow copy (it copy address)
+
+// let arr1=[1,2,3,4];
+// let arr2=[...arr1];
+// arr2[1]=20;
+// console.log(arr1,arr2);
+// console.log([..."apple"]);
+
+// let kl={
+//     name:"rahul",
+//     id:1,
+//     ranking:15,
+//     nick:"classy"
+// }
+// let vk={
+//     name:"virat",
+//     id:18,
+//     ranking:{
+//         t20:8,
+//         odi:6,
+//         test:10
+//     },
+//     nick:"cheeku"
+// }
+// vk.name="virat kohli"
+// let vk={...kl};
+// vk.name="virat"
+// vk.id=18;
+// vk.ranking=8
+// vk={...kl};
+// vk.name="virat"
+// console.log(kl,vk);
+// console.log(virahul);
+
+//nested Object
+// let vk1=JSON.parse(JSON.stringify(vk));
+// vk1.name="Rahul"
+// vk1.ranking.odi=1;
+// console.log(vk,"obj1");
+// console.log(vk1,"obj2");
+
+
+
+
+//Destructuring
+
+//     let [firstName,lastName,mark]=["siva",'santhosh',397];
+//     console.log(firstName,mark,lastName);
+
+//     let person={
+//         name:"rahul",
+//         age:26,   
+//     }
+
+// let {name:n,age:a,nick="classy"}=person;
+// console.log(n,a,nick,person);
+
+//         let player1={
+//             id:1,
+//             name:"rahul",
+//             age:29,
+//             player2:{
+//                 name:"virat",
+//                 age:34,
+//             }
+//         }
+// let{name,id,player2:vk}=player1
+// console.log(name,id,vk.name,vk.age);
+
+//Call Back Function
+
+// let hello=(a)=>{
+//     a()
+// }
+// let welcome=()=>{
+//     setTimeout(()=>{
+//         console.log("Welcome");
+//     },2000)   
+// }
+// hello(welcome);
+
+// let name="rahul"
+// let age=29;
+
+// let calback=(n,a,kl)=>{
+//     console.log("hello");
+//     kl(n,a)
+   
+// }
+// let rahul=(n,a)=>{
+//     console.log(n,a);
+// }
+// calback(name,age,rahul);
+
+
+//test1
+//1 question
+// console.log([...'apple']);
+
+//6 question
+// let input=[1,2,-4,7,-3,5,6];
+// let output=[];
+// let calback=(a,p)=>{
+//     p(a);
+// }
+// let positive=(a)=>{
+//     a.forEach((e)=>{
+//         // console.log(e>0);
+//         if(e>0){
+//         console.log(e);
+//         output.push(e);
+//     }  
+//     })
+// }
+// calback(input,positive);
+// console.log(output);
+
+//5 question
+
+// function sum(a=11,b=6){
+//     return a+b;
+// }
+// console.log(sum());
+// console.log(sum(11,2));
+// console.log(sum(3));
+// console.log(sum(undefined,20));
+
+// //7 question
+
+// let fruits=["Apple","Banana","Melon","Plum"];
+// let [Apple,fru,c,d,e="orange"]=fruits;
+// console.log(Apple,fru,c,d,e);
+
+//promise
+// let btn=document.getElementById("btn");
+// console.log(btn);
+// let test=new Promise(function(resolve,reject){
+//     resolve("true");
+//     reject("false");
+// })
+// test.then((msg)=>{
+//     console.log(msg);
+// }).then(()=>{
+//     setTimeout(()=>{
+//         console.log("hello");
+//     },1000)
+// })
+// .then(()=>{
+//     setTimeout(()=>{
+//         console.log("hello2");
+//     },2000)
+// })
+// .then(()=>{
+//     setTimeout(()=>{
+//         console.log("hello3");
+//     })
+// })
+// test.catch((ms)=>{
+//     console.log(ms);
+// })
+
+//promise chaining
+
+// let test=new Promise(function(resolve,reject){
+//     resolve()
+// })
+// test.then(()=>{
+//     setTimeout(() => {
+//         console.log("first");
+//     },1000);
+    
+// })
+// .then(()=>{
+//     return new Promise(function(resolve,reject){
+//         setTimeout(() => {
+//         console.log("Second");
+//         resolve()
+//     },2000);
+    
+//     }) 
+// })
+// .then(()=>{
+//     console.log("Third");
+// })
+
+//async 
+// let pro=new Promise(function(resolve,reject){
+//     let a=true;
+//     if(a){
+//         setTimeout(resolve,2000,"Welcome")
+//     }
+//     else{
+//         // setTimeout(reject,1000,"Rejected")
+//         reject("Rejected")
+//     }
+// })
+// async function test(){
+//     try{
+//         let result=await pro;
+//         console.log(result);
+//         console.log("hello");
+//     }
+//     catch(msg){
+//         console.log(msg);
+//     }
+// }
+// test();
+
+//this
+
+//1
+
+// const car = {
+//   name: 'car',
+//   start() {
+//     console.log('Start the ' + this.name);
+//   },
+//   speedUp() {
+//     console.log('Speed up the ' + this.name);
+//   },
+//   stop() {
+//     console.log('Stop the ' + this.name);
+//   },
+// };
+// const aircraft = {
+//   name: 'aircraft',
+//   fly() {
+//     console.log('Fly');
+//   },
+// };
+// car.start.call(aircraft);
+// car.speedUp.call(aircraft);
+// aircraft.fly();
+
+//2
+
+// let arr=[1,2,3];
+// let numbers=[4,5,6];
+// arr.push.apply(arr,numbers);
+// console.log(arr);
+
+//3
+
+// const computer = {
+//     name: 'MacBook',
+//     isOn: false,
+//     turnOn(a,m) {
+//         this.isOn = true;
+//         return `The ${this.name} is On ${a} ${m}`;
+//     },
+//     turnOff() {
+//         this.isOn = false;
+//         return `The ${this.name} is Off`;
+//     }
+// };
+// const server = {
+//     name: 'Dell PowerEdge T30',
+//     isOn: false
+// };
+// console.log(computer.turnOn.apply(server,["apply" ,"method"]));
+// Output
+// The Dell PowerEdge T30 is On  use apply method
+
+//4
+
+// let runner = {
+//     name: 'Runner',
+//     run: function(speed) {
+//         console.log(this.name + ' runs at ' + speed + ' mph.');
+//     }
+// };
+// let flyer = {
+//     name: 'Flyer',
+//     fly: function(speed) {
+//         console.log(this.name + ' flies at ' + speed + ' mph.');
+//     }
+// };
+// let result=runner.run.bind(flyer,20);
+// setTimeout(()=>{
+//     result()
+// },2000)
+// Output:
+// Flyer runs at 20 mph.
+// use bind method
+
+
+// let test={
+//     fName:"siva",
+//     lName:"santhosh",
+//     getThis:function(vk,ms){
+//         return `${this.fName} ${this.lName}  ${vk} and ${ms} close friends`
+//     }
+// }
+// let test1={
+//     fName:"vasi",
+//     lName:"karan",
+// }
+// let test2={
+//     fName:"wellcome",
+//     lName:"Rahul",
+// }
+// console.log(test.getThis.call(test1,"viratKohli","MSDhoni"));
+// let result=test.getThis.bind(test1)
+// console.log(result());
+// let test=()=>{
+// console.log(this);
+// }
+// console.log(test());
+
+//class
+
+// class Person{
+//     constructor(name,age,nick){
+//         this.name=name;
+//         this.age=age;
+//         this.nick=nick;
+//     }
+
+//     welcome(){
+//         console.log("welcomw",this.name);
+//         console.log(`${this.name} age is ${this.age}`);
+//         console.log(`He is ${this.nick}`);
+//     }
+//     thank(){
+//         console.log("Thankyou",this.name);
+//     }
+// }
+// let person1=new Person("Rahul",29,"classy");
+// let person2=new Person("Kohli",34,"King");
+// let person3=new Person("Dhoni",42,"cool")
+
+// person2.welcome();
+// person3.thank()
+
+// class Person{
+//     static total=0;
+//     constructor(name,age,country){
+//         this.name=name;
+//         this.age=age;
+//         this.country=country
+//         Person.total++;
+//     }
+//     details(){
+//         console.log(this.name);
+//         console.log(this.age);
+//         console.log(this.country);
+//     }
+
+// }
+// let per1=new Person("Rahul",29,"India");
+// let per2=new Person("Maxwell",30,"Aus");
+// let per3=new Person("virat",34,"India")
+// per1.details()
+// per2.details();
+// console.log(Person.total,"Total");
+
+// class Bonus extends Person{
+//     constructor(name,age,country,bonus){
+//         super(name,age,country);
+//         this.bonus=bonus;
+//     }
+//     message(){
+//         console.log("Child Class");
+//     }
+//     details(){
+//         console.log("Overridding",this.bonus);
+//     }
+// }
+// let bonus=new Bonus("Child",10,"America",10000)
+// bonus.details()
+
+//1
+// class Rectangle{
+//     constructor(width,height){
+//         this.width=width;
+//         this.height=height;
+//     }
+//     area(){
+//         console.log(this.height*this.width,"Area");
+//     }
+//     perimeter(){
+//         console.log(2*(this.width+this.height),"Perimeter");
+//     }
+// }
+// let rect=new Rectangle(15,10);
+// rect.area();
+// rect.perimeter();
+
+//2
+
+// class BankAccount{
+//     static d=500;
+//     static w=300;
+//     constructor(accountNum,balance){
+//         this.accountNum=accountNum;
+//         this.balance=balance;
+//         BankAccount.d
+//         BankAccount.w
+//     }
+//     deposit(){
+//     //    let d=500;
+//         let totalAmout=this.balance+BankAccount.d;
+//         console.log(totalAmout,"deposit");
+//     }
+//     widthdraw(){
+//         // let w=300;
+//         this.balance=this.balance-BankAccount.w;
+//         console.log(this.balance,"WidthDraw");
+//     }
+// }
+// let bank=new BankAccount(2023,1000)
+// bank.widthdraw();
+// bank.deposit()
+
+//3
+
+// class Employee{
+//     constructor(name,salary){
+//         this.name=name;
+//         this.salary=salary;
+//     }
+//     anunalSalary(){
+//         console.log(this.salary*12);
+//     }
+// }
+
+// class Manager extends Employee{
+//     constructor(name,salary,bonus){
+//         super(name,salary)
+//         this.bonus=bonus;
+//     }
+//     anunalSalary(){
+//         console.log(this.salary*12+this.bonus);
+//     }
+// }
+
+// let employee=new Employee("Rahul",40000);
+// employee.anunalSalary();
+
+// let bonus=new Manager("virat",50000,3000);
+// bonus.anunalSalary();
+
+//4
+
+// class Book{
+//     constructor(title,author,publicationYear){
+//         this.title=title;
+//         this.author=author;
+//         this.publicationYear=publicationYear;
+//     }
+//     details(){
+//         console.log(this.title);
+//         console.log(this.author);
+//         console.log(this.publicationYear);
+//     }
+// }
+// let book=new Book("Sachin","Anothoy",2020)
+// book.details();
+
+// class Ebook extends Book{
+//     constructor(title,author,publicationYear,bookPrice){
+//         super(title,author,publicationYear)
+//         this.bookPrice=bookPrice
+//     }
+//     details(){
+//         console.log(this.title);
+//         console.log(this.author);
+//         console.log(this.publicationYear);
+//     }
+// }
+// let price=new Ebook("ViratKohli","")
+
+//ES6 Test 2
+
+//6 Question
+
+// function checkFun(a,b,c){
+//     console.log(this);
+//     console.log(a);
+//     console.log(b);
+//     console.log(c);
+// }
+// checkFun.call(1,2,3,4);
+
+//4 and 5 question
+
+// let check={
+//     SumofNumbers(a,b){
+//         console.log(a,b);
+//         result=a*b;
+//         return result;
+//     }
+// }
+// let test={
+//     name:"rahul"
+// }
+// let ans=check.SumofNumbers.call(test,2,5);
+// console.log(ans,"Sum");
+
+//7 question
+
+// function job() {
+// return new Promise(function(resolve, reject) {
+// setTimeout(resolve, 500, 'Hello world 1');
+// });
+// }
+// async function test() {
+// let message = await job();
+// console.log(message);
+// return 'Hello world 2';
+// }
+// test().then(function(message) {
+// console.log(message);
+// });
+
+//2 Question
+
+// function test(){
+//     return new Promise(function(resolve,reject){
+//         let num="hello";
+//         if(num>0){
+//             resolve(num);
+//         }
+//         else{
+//             reject("Error")
+//         }
+//     })
+// }
+   
+// test().then((num)=>{
+//     console.log(num)
+//     if(num%2!=0){
+//         setTimeout(()=>{
+//             console.log("odd");
+//         },1000)
+        
+//     }
+//     else{
+//         setTimeout(()=>{
+//             console.log("Even")
+//         },2000)
+//     }
+// })
+// .catch((msg)=>{
+//     console.log(msg);
+// })
+
+// test()
+
+//same 2question reshmi
+
+// function Data(data){
+//   return new Promise((resolve,reject)=>{
+
+//     if(isNaN(data)){
+//       reject(data)
+//     }
+
+//     else{
+//       resolve("erorr")
+//     }
+      
+//   })
+// }
+
+// Data(data= prompt("enter the number")).then(success(data)).catch(failure(msg))
+
+// function success(data){
+ 
+//   if(data%2==0){
+//     setTimeout(()=>{
+//       console.log("even");
+//     },2000)
+//   }
+
+//   else if(data%2!=0){
+//     console.log(data);
+//     setTimeout(()=>{
+//       console.log("odd");
+//     },1000)
+//   }
+// }
+
+
+// function failure(){
+//   if(isNaN(data)){
+//     console.log("string");
+//   }
+  
+// }
+
+
+
+</script>
+</body>
+</html>
